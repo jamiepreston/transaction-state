@@ -55,8 +55,9 @@ Sample transaction history:
 ```
 {
   "transactionId": "0xc817643232e94aec05b910aaa536dc5718299a089d6ec517a2706715b8f148a8",
-  "previousStatus": null,
-  "newStatus": "Initiated",
+  "previousStatus": "Initiated",
+  "receivedStatus": "InMemPool",
+  "newStatus": "InMemPool",
   "timestamp": "Wed, 08 Apr 2026 18:22:02 GMT"
 }
 ```
