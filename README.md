@@ -23,7 +23,49 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Created using [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+
+This service has the following endpoints to match the target behaviour:
+
+**POST `/transactions`**
+- Your service should be able to list the status of all transactions in a single call. 
+**POST `/transactions/bulk` (accepts an array of updates)**
+- Your service should be able to take input of crypto transactions and set their current state. 
+
+**GET `/transactions`**
+
+**GET `/transactions/<TransactionId>`**
+- Your service should be able to retrieve the current state of a transaction using the transaction id. 
+- Your service should be able to list the state history of each transaction 
+- The response format of this endpoint is `{transaction: {...transactionDetails}, history: [{...stateUpdates}]}`
+
+Sample transaction payload:
+```
+{
+  "TransactionId": "0xc817643232e94aec05b910aaa536dc5718299a089d6ec517a2706715b8f148a8",
+  "FromAddress": "0xEf6aE5F5108d210CB45fc8d50c07689374B3b2b2",
+  "ToAddress": "0xaB51d4a8DA4d981dfca0Bf64aEE96054B0D7C23e",
+  "TokenName": "USDC",
+  "Amount": 1000.11,
+  "Status": "Initiated"
+}
+```
+
+Sample transaction history:
+```
+{
+  "transactionId": "0xc817643232e94aec05b910aaa536dc5718299a089d6ec517a2706715b8f148a8",
+  "previousStatus": null,
+  "newStatus": "Initiated",
+  "timestamp": "Wed, 08 Apr 2026 18:22:02 GMT"
+}
+```
+
+## Next steps
+Given more time, this could be improved upon by:
+- Moving to a repository pattern in the service, rather than using the service for data storage.
+- Add e2e tests
+- Add authentication
 
 ## Project setup
 
